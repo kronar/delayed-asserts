@@ -1,14 +1,20 @@
+package com.github.kronar;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.util.logging.Logger;
+
 /**
  */
-public class ExampleTestWithDelayedAsserts {
+public class TestWithDelayedAsserts {
 
 
     @Rule
     public DelayedAssertRule delayedAssertRule = new DelayedAssertRule();
+
+    private static final Logger LOGGER = Logger.getLogger(TestWithDelayedAsserts.class.getName());
 
     private static final class DelayedAssertTrue implements DelayedAssert {
         private final boolean actualValue;
@@ -34,5 +40,7 @@ public class ExampleTestWithDelayedAsserts {
     public void testB() {
         delayedAssertRule.addDelayedAssert(new DelayedAssertTrue(false, "Must be true always"));
         Assert.assertFalse("You'll never rich this point", false);
+        LOGGER.info("You get this point");
+
     }
 }

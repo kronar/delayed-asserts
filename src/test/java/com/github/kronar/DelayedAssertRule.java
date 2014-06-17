@@ -1,3 +1,5 @@
+package com.github.kronar;
+
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.junit.runners.model.MultipleFailureException;

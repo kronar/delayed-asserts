@@ -1,3 +1,5 @@
+package com.github.kronar;
+
 /**
  */
 public interface DelayedAssert {
